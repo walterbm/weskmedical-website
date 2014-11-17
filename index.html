@@ -14,8 +14,8 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
-        <link href='http://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Monda:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -23,11 +23,16 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div id="nav_bar">
-            <a href="#">Wesk Medical</a>
-            <a href="#">About</a>
-            <a href="#">Team</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#team">Team</a>
+            <a href="#contact">Contact</a>
+            <div id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         <div id="home-block">
             <svg id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 269.5 299" enable-background="new 0 0 269.5 299" xml:space="preserve">
@@ -39,7 +44,7 @@
         </div>
         <div class="arrow-down"></div>
         <div class="block" id="about">
-            <p>Wesk Medical is a medical device design company born from the Department of Bioengineering at the University of Maryland</p>
+            <p>Wesk Medical is a medical device design company born from the Department of Bioengineering at the University of Maryland.</p>
 
             <p>We work in collaboration with medical professionals and industry partners to design, prototype, and develop unique medical devices that address shortcomings in patient care.</p>
         </div>
@@ -50,7 +55,7 @@
             <div class="project">
                 <div id="text-block">
                     <h3>ETAG CATHETER</h3>
-                    <p>Over 50 million intubations are performed annually but no existing medical devices can accurately deliver medicine to the lungs of patients undergoing these procedures</p>
+                    <p>Over 50 million intubations are performed annually but no existing medical devices can accurately deliver medicine to the lungs of patients undergoing these procedures.</p>
                     <img id="mobile-catheter" src="img/etag_web_diagram.svg">
                     <p>Wesk Medical has developed the Endotracheal Aerosol Generating (ETAG) catheter, an innovative medical device that promises to improve the efficacy of inhaled drug administration. The ETAG catheter is designed for use by patients undergoing intubation for the treatment of Acute Respiratory Failure.</p>
                 </div>
@@ -64,22 +69,22 @@
                 <div class="profile">
                     <img src="img/esmaeel.jpg">
                     <h3>Esmaeel Paryavi</h3>
-                    <p>Esmaeel works as an Engineer at MPR Associates, Inc. and specializes in the development of medical devices. He currently lives in D.C. but hates politics</p>
+                    <p>Esmaeel works as an Engineer at MPR Associates, Inc. and specializes in the development of medical devices. He spends the weekdays in D.C. and the weekends traveling the world.</p>
                 </div>
                 <div class="profile">
                     <img src="img/steve.jpg">
                     <h3>Steve Robinson</h3>
-                    <p>Steve is pursing a Ph.D. in Biomedical engineering from the University of Michigan, Ann Arbor. He once broke his arm mountain climbing but even that couldn't stop him from working.</p>
+                    <p>Steve is pursing a Ph.D. in Biomedical Engineering from the University of Michigan, Ann Arbor. He once broke his arm mountain climbing but that never stopped him from working.</p>
                 </div>
                 <div class="profile">
                     <img src="img/walter.jpg">
                     <h3>Walter Beller-Morales</h3>
-                    <p>Walter is a law student at Cardozo Law School and a freelance web developer. He lives in NYC and works as a problem solver for local tech startup companies.</p>
+                    <p>Walter is a student at Cardozo Law School and a freelance web developer. He lives in NYC and works as a problem solver for local tech startup companies.</p>
                 </div>
                 <div class="profile">
                     <img src="img/kaiyi.jpg">
                     <h3>Kaiyi Xie</h3>
-                    <p>Kaiyi will soon receive his J.D. from the University of Pennsylvania School of Law. He is an associate editor for the UPenn Law Review and will soon be a feared Patent Litigator.</p>
+                    <p>Kaiyi will soon receive his J.D. from the University of Pennsylvania School of Law. He is an associate editor for the UPenn Law Review and will soon be a feared patent litigator.</p>
                 </div>
                 <div class="profile">
                     <img src="img/bernard.jpg">
@@ -90,7 +95,7 @@
         </div>
 
 
-        <footer><a target="_blank" href="mailto:hello@weskmedical.com">hello@weskmedical.com</a> <br>&copy; Wesk Medical, LLC 2014</footer>
+        <footer id="contact"><a target="_blank" href="mailto:hello@weskmedical.com">Say Hello!</a> <br>&copy; Wesk Medical, LLC 2014</footer>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
