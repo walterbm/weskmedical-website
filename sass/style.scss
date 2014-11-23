@@ -305,9 +305,7 @@ a{
     align-items: stretch;
     .profile{
         display: block;
-        width: 40%;
-        max-width: 185px;
-        min-width: 120px;
+        width: 185px;
         margin: 6% 1%;
 
         img{
@@ -413,6 +411,7 @@ footer{
             width: 100%;
         }
     }
+    
     footer{
         font-size: 1rem;
         a{
@@ -424,5 +423,10 @@ footer{
     #home-block{
         height: 75vh;
         padding-top: 8vh;
+    }
+    #profiles{
+        .profile{
+            width: 130px;
+        }
     }
 }
