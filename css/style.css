@@ -46,12 +46,40 @@ p {
   line-height: 180%; }
 
 a {
-  color: #F3F1F7; }
+  color: #F3F1F7;
+  text-decoration: none;
+  -webkit-transition: color 0.4s ease, background 0.5s ease;
+          transition: color 0.4s ease, background 0.5s ease; }
   a:hover {
     color: white; }
 
-#nav_bar {
+.wrapper {
   position: absolute;
+  display: block;
+  -webkit-transition: all 0.4s ease;
+          transition: all 0.4s ease;
+  -webkit-transform: translateY(0px);
+      -ms-transform: translateY(0px);
+          transform: translateY(0px); }
+
+.wrapper.open {
+  -webkit-transform: translateY(195px);
+      -ms-transform: translateY(195px);
+          transform: translateY(195px); }
+
+.block {
+  clear: both;
+  padding: 8% 10%; }
+  .block h2 {
+    color: #8A65DC; }
+
+.clear-float {
+  clear: both;
+  margin: 3% 0; }
+
+#nav-bar {
+  position: absolute;
+  z-index: 10;
   top: 0;
   right: 0;
   display: -webkit-flex;
@@ -61,16 +89,14 @@ a {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin: 2% 3%; }
-  #nav_bar a {
+  #nav-bar a {
     color: #F3F1F7;
     text-decoration: none;
     display: inline-block;
     padding: 1rem;
     margin: 0 0.5rem;
-    border-radius: 0.5rem;
-    -webkit-transition: all 0.4s ease;
-            transition: all 0.4s ease; }
-    #nav_bar a:hover {
+    border-radius: 0.5rem; }
+    #nav-bar a:hover {
       color: white;
       background: #aa8fe5; }
 
@@ -78,8 +104,10 @@ a {
   display: none;
   width: 30px;
   height: 30px;
-  position: relative;
-  margin-top: 0.5rem;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  margin-top: 30px;
   -webkit-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
@@ -129,18 +157,13 @@ a {
   width: 0%;
   left: 50%; }
 
-.block {
-  clear: both;
-  padding: 4% 10%; }
-  .block h2 {
-    color: #8A65DC; }
-
 #home-block {
   background: #8A65DC;
   height: 90vh;
   padding-top: 5vh;
   padding-right: 2%;
-  padding-left: 2%; }
+  padding-left: 2%;
+  box-shadow: 0px 6px 3px 0px rgba(50, 50, 50, 0.2); }
 
 #logo {
   display: block;
@@ -225,10 +248,15 @@ a {
 .arrow-down {
   width: 0;
   height: 0;
+  position: relative;
+  z-index: 1;
+  top: -1px;
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
   border-top: 20px solid #8A65DC;
-  margin: 0 auto; }
+  margin: 0 auto;
+  -webkit-filter: drop-shadow(0px 6px 3px rgba(50, 50, 50, 0.2));
+          filter: drop-shadow(0px 6px 3px rgba(50, 50, 50, 0.2)); }
 
 #about {
   width: 60%;
@@ -236,28 +264,32 @@ a {
 
 #projects {
   background: #8A65DC;
-  color: #F3F1F7; }
+  color: #F3F1F7;
+  box-shadow: 0px 6px 3px 0px rgba(50, 50, 50, 0.2); }
   #projects h2 {
     color: #F3F1F7; }
 
 .project {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-  .project #big-catheter {
+  overflow: hidden; }
+  .project #catheter, .project #catheter-tip {
+    display: block;
     width: 50%; }
-  .project #mobile-catheter {
-    display: none; }
-  .project #text-block {
-    width: 40%; }
+  .project #catheter {
+    max-height: 90vh;
+    float: right; }
+  .project #catheter-tip {
+    max-height: 50vh;
+    float: left; }
   .project p {
+    display: block;
+    width: 40%;
     font-size: 1.2rem;
-    padding: 3% 0 3% 1%; }
+    padding: 3% 0 3% 1%;
+    float: left; }
+    .project p:last-of-type {
+      float: right; }
 
-#team {
+#profiles {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -270,20 +302,21 @@ a {
   -webkit-align-items: stretch;
       -ms-flex-align: stretch;
           align-items: stretch; }
-  #team .profile {
+  #profiles .profile {
     display: block;
     width: 40%;
     max-width: 185px;
     min-width: 120px;
     margin: 6% 1%; }
-    #team .profile img {
+    #profiles .profile img {
       width: 100%;
-      border: 2px solid #8A65DC; }
-    #team .profile h3 {
+      border: 1px solid #8A65DC;
+      box-shadow: 0px 3px 3px 0px rgba(50, 50, 50, 0.1); }
+    #profiles .profile h3 {
       margin: 0;
       font-size: 1rem;
       padding: 2% 0 10% 0; }
-    #team .profile p {
+    #profiles .profile p {
       margin: 0;
       font-size: 1rem;
       line-height: 1.2rem; }
@@ -293,38 +326,80 @@ footer {
   font-family: "Monda", sans-serif;
   color: #F3F1F7;
   font-size: 0.8rem;
-  line-height: 1.5rem;
+  font-weight: 300;
+  line-height: 200%;
   text-align: center;
-  padding: 1% 0; }
+  padding: 5% 0; }
+  footer a {
+    font-weight: 700;
+    font-size: 1.8rem; }
 
 /* ==========================================================================
    Media Queries for Responsive Design.
    ========================================================================== */
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   html {
     font-size: 70%; }
 
   .block {
-    padding: 4% 4%; }
+    padding: 10% 4%; }
 
-  #nav_bar a {
-    display: none; }
-  #nav_bar #hamburger {
+  #nav-bar {
+    position: absolute;
+    z-index: 2;
+    -webkit-transform: translateY(-225px);
+        -ms-transform: translateY(-225px);
+            transform: translateY(-225px);
+    -webkit-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0;
+    background: #5329b2;
+    width: 100%;
+    box-shadow: 0px 6px 3px 0px rgba(50, 50, 50, 0.3); }
+    #nav-bar a {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding: 1.5rem;
+      border-bottom: 1px solid #401f89;
+      border-radius: 0; }
+      #nav-bar a:last-of-type {
+        border-bottom: 1px solid #5329b2; }
+      #nav-bar a:hover {
+        background: none; }
+
+  #nav-bar.open {
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+            transform: translateY(0px); }
+
+  #hamburger {
     display: block; }
 
   #about {
     width: 80%;
     margin: 0 auto; }
 
-  .project #big-catheter {
-    display: none; }
-  .project #mobile-catheter {
-    display: block;
+  .project #catheter, .project #catheter-tip {
+    float: none;
     width: 80%;
-    max-height: 75vh;
     margin: 0 auto; }
-  .project #text-block {
+  .project #catheter {
+    max-height: 75vh; }
+  .project #catheter-tip {
+    max-height: 40vh; }
+  .project p {
+    float: none;
     width: 100%; }
 
   footer {
-    font-size: 1.2rem; } }
+    font-size: 1rem; }
+    footer a {
+      font-size: 2rem; } }
+@media (max-width: 500px) {
+  #home-block {
+    height: 75vh;
+    padding-top: 8vh; } }
